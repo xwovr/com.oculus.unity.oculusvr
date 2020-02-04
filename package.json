@@ -1,0 +1,25 @@
+{
+  "name": "com.oculus.unity.oculusvr",
+  "displayName": "Oculus Utilities",
+  "version": "12.0",
+  "unity": "2018.4",
+  "description": "Oculus Utilities for Unity",
+  "keywords": [
+    "package",
+    "oculus",
+    "utilities",
+	"vr",
+	"oculusvr"
+  ],
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xwovr/com.oculus.unity.oculusvr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xwovr/com.oculus.unity.oculusvr/issues"
+  },
+  "homepage": "https://github.com/xwovr/com.oculus.unity.oculusvr",
+  "author": "Xiang Wei <xiang.wei@oculus.com>",
+  "license": "Oculus"
+}
