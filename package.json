@@ -1,7 +1,7 @@
 {
   "name": "com.oculus.unity.oculusvr",
-  "displayName": "Oculus Utilities",
-  "version": "12.0.0",
+  "displayName": "(Oculus) Virtual Reality Utilities",
+  "version": "13.0.0",
   "unity": "2018.4",
   "description": "Oculus Utilities for Unity",
   "keywords": [
@@ -21,5 +21,12 @@
   },
   "homepage": "https://github.com/xwovr/com.oculus.unity.oculusvr",
   "author": "Facebook Technologies, LLC",
-  "license": "Oculus"
+  "license": "Oculus",
+  "samples": [
+    {
+	  "displayName": "Sample Scenes",
+      "description": "Sample scenes for Oculus Virtual Reality Utilities",
+      "path": "Samples~/Scenes"
+    }
+  ]
 }
