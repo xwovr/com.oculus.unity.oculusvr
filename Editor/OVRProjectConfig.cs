@@ -71,6 +71,7 @@ public class OVRProjectConfig : ScriptableObject
 			Uri configUri = new Uri(configAssetPath);
 			Uri projectUri = new Uri(Application.dataPath);
 			Uri relativeUri = projectUri.MakeRelativeUri(configUri);
+			return relativeUri.ToString();
 		}
 	}
 
