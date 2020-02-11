@@ -57,7 +57,7 @@ public class OVRProjectConfig : ScriptableObject
 		bool isInReadOnlyPackage = true;
 		if (isInReadOnlyPackage)
 		{
-			return Path.Combine(Application.dataPath, "OculusProjectConfig.asset");
+			return Application.dataPath + "/OculusProjectConfig.asset";
 		}
 		else
 		{
