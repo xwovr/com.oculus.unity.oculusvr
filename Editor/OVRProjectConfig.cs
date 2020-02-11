@@ -54,18 +54,24 @@ public class OVRProjectConfig : ScriptableObject
 
 	private static string GetOculusProjectConfigAssetPath()
 	{
-		var so = ScriptableObject.CreateInstance(typeof(OVRPluginUpdaterStub));
-		var script = MonoScript.FromScriptableObject(so);
-		string assetPath = AssetDatabase.GetAssetPath(script);
-		string editorDir = Directory.GetParent(assetPath).FullName;
-		string ovrDir = Directory.GetParent(editorDir).FullName;
-		string oculusDir = Directory.GetParent(ovrDir).FullName;
-		string configAssetPath = Path.GetFullPath(Path.Combine(oculusDir, "OculusProjectConfig.asset"));
-		Uri configUri = new Uri(configAssetPath);
-		Uri projectUri = new Uri(Application.dataPath);
-		Uri relativeUri = projectUri.MakeRelativeUri(configUri);
-
-		return relativeUri.ToString();
+		bool isInReadOnlyPackage = true;
+		if (isInReadOnlyPackage)
+		{
+			return "OculusProjectConfig.asset";
+		}
+		else
+		{
+			var so = ScriptableObject.CreateInstance(typeof(OVRPluginUpdaterStub));
+			var script = MonoScript.FromScriptableObject(so);
+			string assetPath = AssetDatabase.GetAssetPath(script);
+			string editorDir = Directory.GetParent(assetPath).FullName;
+			string ovrDir = Directory.GetParent(editorDir).FullName;
+			string oculusDir = Directory.GetParent(ovrDir).FullName;
+			string configAssetPath = Path.GetFullPath(Path.Combine(oculusDir, "OculusProjectConfig.asset"));
+			Uri configUri = new Uri(configAssetPath);
+			Uri projectUri = new Uri(Application.dataPath);
+			Uri relativeUri = projectUri.MakeRelativeUri(configUri);
+		}
 	}
 
 	public static OVRProjectConfig GetProjectConfig()
