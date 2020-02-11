@@ -57,7 +57,7 @@ public class OVRProjectConfig : ScriptableObject
 		bool isInReadOnlyPackage = true;
 		if (isInReadOnlyPackage)
 		{
-			return "OculusProjectConfig.asset";
+			return Path.Combine(Application.dataPath, "OculusProjectConfig.asset");
 		}
 		else
 		{
@@ -96,6 +96,7 @@ public class OVRProjectConfig : ScriptableObject
 			projectConfig.disableBackups = true;
 			projectConfig.enableNSCConfig = true;
 			projectConfig.focusAware = false;
+			Debug.Log("Create new OVRProjectConfig at " + oculusProjectConfigAssetPath);
 			AssetDatabase.CreateAsset(projectConfig, oculusProjectConfigAssetPath);
 		}
 		return projectConfig;
